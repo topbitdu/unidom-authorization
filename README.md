@@ -19,6 +19,7 @@ gem 'unidom-authorization'
 ```shell
 rake db:migrate
 ```
+The migration versions start with 200004.
 
 ## Call the Model
 ```ruby
