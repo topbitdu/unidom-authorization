@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     unidom-authorization (0.1)
-      unidom-common (~> 0.8)
+      unidom-common (~> 0.9)
 
 GEM
   remote: https://rubygems.org/
@@ -44,7 +44,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     builder (3.2.2)
-    concurrent-ruby (1.0.1)
+    concurrent-ruby (1.0.2)
     erubis (2.7.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -101,7 +101,7 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    unidom-common (0.8)
+    unidom-common (0.9)
       pg (~> 0)
       rails (~> 4.2)
 
