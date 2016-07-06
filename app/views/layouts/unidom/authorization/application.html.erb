@@ -3,12 +3,12 @@
 <head>
   <title>Unidom Authorization</title>
   <%= stylesheet_link_tag    'unidom/authorization/application', media: 'all' %>
-  <%= javascript_include_tag 'unidom/authorization/application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
+<%= javascript_include_tag 'unidom/authorization/application' %>
 
 </body>
 </html>
