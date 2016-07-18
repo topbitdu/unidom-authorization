@@ -25,4 +25,7 @@ The migration versions start with 200004.
 ```ruby
 Unidom::Authorization::Permission.valid_at.alive
 Unidom::Authorization::Authorizing.valid_at.alive
+
+permission = Unidom::Authorization::Permission.valid_at.alive.first
+Unidom::Authorization::Authorizing.authorize! permission, user
 ```

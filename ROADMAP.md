@@ -5,4 +5,19 @@
 2. Authorizing model & migration
 
 ## v0.2
-1. Improve the Ruby Gem Specification to depend on unidom-common v0.9
+1. Improve the Authorizing model to add the ::authorize! method
+2. Improve the Ruby Gem Specification to depend on unidom-common v0.9
+
+## v1.0
+1. Improve the Authorizing model to support the Keyword Arguments
+
+## v1.1
+1. As Authorized concern
+2. Improve the Permission model to add the #authorize! method
+
+## v1.2
+1. Improve the As Authorized concern to add the ``has_many`` #permissions macro
+2. Improve the As Authorized concern to add the #is_authorized! method
+
+## v1.3
+1. Improve the Permission model to add the ``has_many`` #authorized macro

@@ -14,4 +14,15 @@ class Unidom::Authorization::Authorizing < ActiveRecord::Base
   scope :authorized_is, ->(authorized) { where authorized: authorized }
   scope :authorized_by, ->(authorizer) { where authorizer: authorizer }
 
+  def self.authorize!(permission, authorized, authorizer = nil, opened_at = Time.now)
+    attributes = { opened_at: opened_at }
+    if authorizer.present?
+      attributes[:authorizer] = authorizer
+    else
+      attributes[:authorizer_id]   = Unidom::Common::NULL_UUID
+      attributes[:authorizer_type] = ''
+    end
+    self.authorized_is(authorized).permission_is(permission).valid_at.alive.first_or_create! attributes
+  end
+
 end
