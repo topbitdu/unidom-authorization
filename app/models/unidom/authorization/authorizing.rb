@@ -14,7 +14,11 @@ class Unidom::Authorization::Authorizing < ActiveRecord::Base
   scope :authorized_is, ->(authorized) { where authorized: authorized }
   scope :authorized_by, ->(authorizer) { where authorizer: authorizer }
 
-  def self.authorize!(permission, authorized, authorizer = nil, opened_at = Time.now)
+  def self.authorize!(permission: nil, authorized: nil, authorizer: nil, opened_at: Time.now)
+    raise ArgumentError.new('The authorized argument is required.') if authorized.blank?
+    raise ArgumentError.new('The opened_at argument is required.' ) if opened_at.blank?
+    raise ArgumentError.new('The permission argument is required.') if permission.blank?
+
     attributes = { opened_at: opened_at }
     if authorizer.present?
       attributes[:authorizer] = authorizer

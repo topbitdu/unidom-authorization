@@ -7,3 +7,6 @@
 ## v0.2
 1. Improved the Authorizing model to add the ::authorize! method
 2. Improved the Ruby Gem Specification to depend on unidom-common v0.9
+
+## v1.0
+1. Improved the Authorizing model to support the Keyword Arguments

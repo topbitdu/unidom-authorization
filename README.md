@@ -27,5 +27,5 @@ Unidom::Authorization::Permission.valid_at.alive
 Unidom::Authorization::Authorizing.valid_at.alive
 
 permission = Unidom::Authorization::Permission.valid_at.alive.first
-Unidom::Authorization::Authorizing.authorize! permission, user
+Unidom::Authorization::Authorizing.authorize! permission: permission, authorized: user
 ```
