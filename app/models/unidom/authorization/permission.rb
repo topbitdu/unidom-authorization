@@ -13,4 +13,19 @@ class Unidom::Authorization::Permission < ActiveRecord::Base
 
   scope :path_is, ->(path) { where path: path }
 
+  def authorize!(authorized, by: nil, at: Time.now)
+    attributes = { authorized: authorized, opened_at: at }
+    if by.present?
+      attributes[:authorizer] = by
+    else
+      attributes[:authorizer_id]   = Unidom::Common::NULL_UUID
+      attributes[:authorizer_type] = ''
+    end
+    authorizings.create! attributes
+  end
+
+  def authorized?(authorized, at: Time.now)
+    authorizings.authorized_is(authorized).valid_at(now: at).alive.exists?
+  end
+
 end

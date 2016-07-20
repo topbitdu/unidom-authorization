@@ -10,3 +10,8 @@
 
 ## v1.0
 1. Improved the Authorizing model to support the Keyword Arguments
+
+## v1.1
+1. As Authorized concern
+2. Improved the Permission model to add the #authorize! method
+3. Improved the Permission model to add the #authorized? method

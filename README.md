@@ -27,5 +27,21 @@ Unidom::Authorization::Permission.valid_at.alive
 Unidom::Authorization::Authorizing.valid_at.alive
 
 permission = Unidom::Authorization::Permission.valid_at.alive.first
+
+permission.authorized? user, at: Time.now # false
 Unidom::Authorization::Authorizing.authorize! permission: permission, authorized: user
+# or
+permission.authorize! user, by: current_user, at: Time.now
+permission.authorized? user, at: Time.now # true
+
 ```
+
+## Include the Conerns
+```ruby
+include Unidom::Authorization::Concerns::AsAuthorized
+```
+
+### As Authorized concern
+The As Authorized concern do the following tasks for the includer automatically:  
+1. Define the has_many :authorizings macro as: ``has_many :authorizings, class_name: 'Unidom::Authorization::Authorizing', as: :authorized``  
+2. Define the has_many :permissions macro as: ``has_many :permissions, through: :authorizings, source: :permission``  
