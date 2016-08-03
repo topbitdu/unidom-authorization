@@ -17,5 +17,8 @@
 3. Improve the Permission model to add the #authorized? method
 
 ## v1.2
-1. Improve the As Authorized concern to add the #is_authorized! method
-2. Improve the Permission model to add the has_many #authorized_users macro
+1. Improve the As Authorized concern to add the #is_authorized! & #is_authorized? method
+
+## v1.3
+1. Improve the As Authorized concern for argument validation
+2. Improve the Permission model for argument validation
