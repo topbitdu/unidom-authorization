@@ -6,7 +6,7 @@
 
 ## v0.2
 1. Improve the Authorizing model to add the ::authorize! method
-2. Improve the Ruby Gem Specification to depend on unidom-common v0.9
+2. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v0.9
 
 ## v1.0
 1. Improve the Authorizing model to support the Keyword Arguments
@@ -18,6 +18,9 @@
 
 ## v1.2
 1. Improve the As Authorized concern to add the #is_authorized! & #is_authorized? method
+
+## v1.2.1
+1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.0
 
 ## v1.3
 1. Improve the As Authorized concern for argument validation
