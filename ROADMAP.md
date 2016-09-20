@@ -25,3 +25,7 @@
 ## v1.2.2
 1. Improve the As Authorized concern for argument validation
 2. Improve the Permission model for argument validation
+
+## v1.3
+1. As Permission concern
+2. Improve the Permission model to include the As Permission concern
