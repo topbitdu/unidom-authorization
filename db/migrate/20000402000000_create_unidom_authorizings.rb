@@ -5,9 +5,9 @@ class CreateUnidomAuthorizings < ActiveRecord::Migration
     create_table :unidom_authorizings, id: :uuid do |t|
 
       t.references :authorizer, type: :uuid, null: false,
-        polymorphic: { type: :uuid, null: false }
+        polymorphic: { null: false, limit: 200 }
       t.references :authorized, type: :uuid, null: false,
-        polymorphic: { type: :uuid, null: false }
+        polymorphic: { null: false, limit: 200 }
       t.references :permission, type: :uuid, null: false
 
       t.text :description
