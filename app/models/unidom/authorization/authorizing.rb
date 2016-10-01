@@ -15,9 +15,10 @@ class Unidom::Authorization::Authorizing < ActiveRecord::Base
   scope :authorized_by, ->(authorizer) { where authorizer: authorizer }
 
   def self.authorize!(permission: nil, authorized: nil, authorizer: nil, opened_at: Time.now)
-    raise ArgumentError.new('The authorized argument is required.') if authorized.blank?
-    raise ArgumentError.new('The opened_at argument is required.' ) if opened_at.blank?
-    raise ArgumentError.new('The permission argument is required.') if permission.blank?
+
+    assert_present! :permission, permission
+    assert_present! :authorized, authorized
+    assert_present! :opened_at,  opened_at
 
     attributes = { opened_at: opened_at }
     if authorizer.present?
@@ -26,7 +27,9 @@ class Unidom::Authorization::Authorizing < ActiveRecord::Base
       attributes[:authorizer_id]   = Unidom::Common::NULL_UUID
       attributes[:authorizer_type] = ''
     end
+
     self.authorized_is(authorized).permission_is(permission).valid_at.alive.first_or_create! attributes
+
   end
 
 end
