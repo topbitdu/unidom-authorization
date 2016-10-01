@@ -8,18 +8,27 @@ module Unidom::Authorization::Concerns::AsAuthorized
     has_many :permissions,  through:    :authorizings,                        source: :permission
 
     def is_authorized!(permission: nil, by: nil, at: Time.now)
-      raise ArgumentError.new('The permission argument is required.') if permission.blank?
-      raise ArgumentError.new('The by argument is required.'        ) if by.blank?
-      raise ArgumentError.new('The at argument is required.'        ) if at.blank?
+
+      assert_present! :permission, permission
+      assert_present! :by,         by
+      assert_present! :at,         at
+
       authorizings.create! permission: permission, authorizer: by, opened_at: at
+
     end
 
     def is_authorized?(permission: nil, at: Time.now)
-      raise ArgumentError.new('The permission argument is required.') if permission.blank?
-      raise ArgumentError.new('The at argument is required.'        ) if at.blank?
+
+      assert_present! :permission, permission
+      assert_present! :at,         at
+
       authorizings.permission_is(permission).valid_at(now: at).alive.exists?
+
     end
 
+  end
+
+  module ClassMethods
   end
 
 end
