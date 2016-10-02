@@ -56,13 +56,13 @@ include Unidom::Authorization::Concerns::AsPermission
 
 ### As Authorized concern
 The As Authorized concern do the following tasks for the includer automatically:  
-1. Define the has_many :authorizings macro as: ``has_many :authorizings, class_name: 'Unidom::Authorization::Authorizing', as: :authorized``
-2. Define the has_many :permissions macro as: ``has_many :permissions, through: :authorizings, source: :permission``
-3. Define the #is_authorized! method as: ``is_authorized!(permission: nil, by: nil, at: Time.now)``
+1. Define the has_many :authorizings macro as: ``has_many :authorizings, class_name: 'Unidom::Authorization::Authorizing', as: :authorized``  
+2. Define the has_many :permissions macro as: ``has_many :permissions, through: :authorizings, source: :permission``  
+3. Define the #is_authorized! method as: ``is_authorized!(permission: nil, by: nil, at: Time.now)``  
 4. Define the #is_authorized? method as: ``is_authorized?(permission: nil, at: Time.now)``
 
 ### As Permission concern
 The As Permission concern do the following tasks for the includer automatically:  
-1. Define the has_many :authorizings macro as: ``has_many :authorizings, class_name: 'Unidom::Authorization::Authorizing'``
-2. Define the #authorize! method as: ``authorize!(authorized, by: nil, at: Time.now)``
-3. Define the #authorize? method as: ``authorize?(authorized, at: Time.now)``
+1. Define the has_many :authorizings macro as: ``has_many :authorizings, class_name: 'Unidom::Authorization::Authorizing'``  
+2. Define the #authorize! method as: ``authorize!(authorized, by: nil, at: Time.now)``  
+3. Define the #authorize? method as: ``authorize?(authorized, at: Time.now)``  
