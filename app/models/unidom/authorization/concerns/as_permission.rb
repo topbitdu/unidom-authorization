@@ -8,9 +8,8 @@ module Unidom::Authorization::Concerns::AsPermission
 
     def authorize!(authorized, by: nil, at: Time.now)
 
-      raise ArgumentError.new('The authorized argument is required.') if authorized.blank?
-      raise ArgumentError.new('The by argument is required.'        ) if by.blank?
-      raise ArgumentError.new('The at argument is required.'        ) if at.blank?
+      assert_present! :authorized, authorized
+      assert_present! :at,         at
 
       attributes = { authorized: authorized, opened_at: at }
       if by.present?
@@ -25,8 +24,8 @@ module Unidom::Authorization::Concerns::AsPermission
 
     def authorize?(authorized, at: Time.now)
 
-      raise ArgumentError.new('The authorized argument is required.') if authorized.blank?
-      raise ArgumentError.new('The at argument is required.'        ) if at.blank?
+      assert_present! :authorized, authorized
+      assert_present! :at,         at
 
       authorizings.authorized_is(authorized).valid_at(now: at).alive.exists?
 
