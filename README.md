@@ -10,12 +10,14 @@ Unidom (统一领域对象模型)是一系列的领域模型引擎。授权领�
 
 
 ## Recent Update
+
 Check out the [Road Map](ROADMAP.md) to find out what's the next.
 Check out the [Change Log](CHANGELOG.md) to find out what's new.
 
 
 
 ## Usage in Gemfile
+
 ```ruby
 gem 'unidom-authorization'
 ```
@@ -23,6 +25,7 @@ gem 'unidom-authorization'
 
 
 ## Run the Database Migration
+
 ```shell
 rake db:migrate
 ```
@@ -31,6 +34,7 @@ The migration versions start with 200004.
 
 
 ## Call the Model
+
 ```ruby
 Unidom::Authorization::Permission.valid_at.alive
 Unidom::Authorization::Authorizing.valid_at.alive
@@ -50,12 +54,14 @@ user.is_authorized? permission: permission, at: Time.now # true
 
 
 ## Include the Concerns
+
 ```ruby
 include Unidom::Authorization::Concerns::AsAuthorized
 include Unidom::Authorization::Concerns::AsPermission
 ```
 
 ### As Authorized concern
+
 The As Authorized concern do the following tasks for the includer automatically:  
 1. Define the has_many :authorizings macro as: ``has_many :authorizings, class_name: 'Unidom::Authorization::Authorizing', as: :authorized``  
 2. Define the has_many :permissions macro as: ``has_many :permissions, through: :authorizings, source: :permission``  
@@ -63,6 +69,7 @@ The As Authorized concern do the following tasks for the includer automatically:
 4. Define the #is_authorized? method as: ``is_authorized?(permission: nil, at: Time.now)``
 
 ### As Permission concern
+
 The As Permission concern do the following tasks for the includer automatically:  
 1. Define the has_many :authorizings macro as: ``has_many :authorizings, class_name: 'Unidom::Authorization::Authorizing'``  
 2. Define the #authorize! method as: ``authorize!(authorized, by: nil, at: Time.now)``  
