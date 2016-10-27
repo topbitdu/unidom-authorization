@@ -1,6 +1,6 @@
 # Authorizing 是授权。
 
-class Unidom::Authorization::Authorizing < ActiveRecord::Base
+class Unidom::Authorization::Authorizing < Unidom::Authorization::ApplicationRecord
 
   self.table_name = 'unidom_authorizings'
 
