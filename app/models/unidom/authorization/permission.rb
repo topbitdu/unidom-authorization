@@ -1,6 +1,6 @@
 # Permission 是权限。
 
-class Unidom::Authorization::Permission < ActiveRecord::Base
+class Unidom::Authorization::Permission < Unidom::Authorization::ApplicationRecord
 
   self.table_name = 'unidom_permissions'
 
