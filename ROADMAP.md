@@ -35,3 +35,6 @@
 2. Improve the Authorizing model for the argument validation
 3. Improve the As Authorized model for the argument validation
 4. Improve the As Permission model for the argument validation
+
+## v1.4.1
+1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.6
