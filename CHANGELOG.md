@@ -2,7 +2,7 @@
 
 ## v0.1
 1. Permission model & migration (20000401000000)
-2. Authorizing model & migration
+2. Authorizing model & migration (20000402000000)
 
 ## v0.2
 1. Improved the Authorizing model to add the ::authorize! method
