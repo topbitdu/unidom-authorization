@@ -5,7 +5,7 @@
 2. Authorizing model & migration (20000402000000)
 
 ## v0.2
-1. Improved the Authorizing model to add the ::authorize! method
+1. Improved the Authorizing model to add the .``authorize!`` method
 2. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v0.9
 
 ## v1.0
