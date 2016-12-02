@@ -14,7 +14,7 @@
 ## v1.1
 1. As Authorized concern
 2. Improved the Permission model to add the #``authorize!`` method
-3. Improved the Permission model to add the #authorized? method
+3. Improved the Permission model to add the #``authorized?`` method
 
 ## v1.2
 1. Improved the As Authorized concern to add the #is_authorized! & #is_authorized? method
