@@ -33,7 +33,7 @@
 ## v1.4
 1. Improved the Authorization migration for the #``authorizer_type`` & the #``authorized_type``
 2. Improved the Authorizing model for the argument validation
-3. Improved the As Authorized model for the argument validation
+3. Improved the As Authorized concern for the argument validation
 4. Improved the As Permission model for the argument validation
 
 ## v1.4.1
