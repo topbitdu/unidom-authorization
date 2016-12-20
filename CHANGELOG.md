@@ -17,7 +17,7 @@
 3. Improved the Permission model to add the #``authorized?`` method
 
 ## v1.2
-1. Improved the As Authorized concern to add the #``is_authorized!`` & #``is_authorized?`` method
+1. Improved the As Authorized concern to add the #``is_authorized!`` method & the #``is_authorized?`` method
 
 ## v1.2.1
 1. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.0
