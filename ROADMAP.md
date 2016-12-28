@@ -31,7 +31,7 @@
 2. Improve the Permission model to include the As Permission concern
 
 ## v1.4
-1. Improve the Authorization migration for the #``authorizer_type`` & the #``authorized_type``
+1. Improve the Authorization migration for the #``authorizer_type`` & the #``authorized_type`` column
 2. Improve the Authorizing model for the argument validation
 3. Improve the As Authorized concern for the argument validation
 4. Improve the As Permission model for the argument validation
