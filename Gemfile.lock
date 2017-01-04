@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    unidom-authorization (1.4.3)
-      unidom-common (>= 1.7.1)
+    unidom-authorization (1.4.4)
+      unidom-common (~> 1.8)
 
 GEM
   remote: https://rubygems.org/
@@ -105,7 +105,7 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    unidom-common (1.7.2)
+    unidom-common (1.8)
       pg (~> 0)
       progne_tapera (>= 0.4)
       rails (>= 4.2)
