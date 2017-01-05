@@ -1,3 +1,4 @@
+##
 # Authorizing 是授权。
 
 class Unidom::Authorization::Authorizing < Unidom::Authorization::ApplicationRecord
