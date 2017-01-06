@@ -1,3 +1,4 @@
+##
 # Permission 是权限。
 
 class Unidom::Authorization::Permission < Unidom::Authorization::ApplicationRecord
