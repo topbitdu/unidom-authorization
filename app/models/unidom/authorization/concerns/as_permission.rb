@@ -1,3 +1,6 @@
+##
+# As Permission 是权限的领域逻辑关注点。
+
 module Unidom::Authorization::Concerns::AsPermission
 
   extend ActiveSupport::Concern
