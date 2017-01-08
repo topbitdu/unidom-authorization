@@ -1,3 +1,6 @@
+##
+# As Authorized 是被授权的功能模块的领域逻辑关注点。
+
 module Unidom::Authorization::Concerns::AsAuthorized
 
   extend ActiveSupport::Concern
