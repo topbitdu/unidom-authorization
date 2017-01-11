@@ -1,6 +1,8 @@
 # Unidom Authorization 授权领域模型引擎
 
+[![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/gems/unidom-authorization/frames)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
+
 [![Gem Version](https://badge.fury.io/rb/unidom-authorization.svg)](https://badge.fury.io/rb/unidom-authorization)
 [![Dependency Status](https://gemnasium.com/badges/github.com/topbitdu/unidom-authorization.svg)](https://gemnasium.com/github.com/topbitdu/unidom-authorization)
 
