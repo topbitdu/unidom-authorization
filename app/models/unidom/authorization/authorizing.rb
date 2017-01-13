@@ -15,6 +15,10 @@ class Unidom::Authorization::Authorizing < Unidom::Authorization::ApplicationRec
   scope :authorized_is, ->(authorized) { where authorized: authorized }
   scope :authorized_by, ->(authorizer) { where authorizer: authorizer }
 
+  ##
+  # 授予 authorized 权限 permission ，授权者是 authorizer ，授权时间是 opened_at。如：
+  # Unidom::Authorization::Authorizing.authorize! permission: permission,
+  #   authorized: selected_person, authorizer: current_person
   def self.authorize!(permission: nil, authorized: nil, authorizer: nil, opened_at: Time.now)
 
     assert_present! :permission, permission
