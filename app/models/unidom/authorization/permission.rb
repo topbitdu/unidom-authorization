@@ -13,4 +13,4 @@ class Unidom::Authorization::Permission < Unidom::Authorization::ApplicationReco
 
   scope :path_is, ->(path) { where path: path }
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Authorization::Permission'
