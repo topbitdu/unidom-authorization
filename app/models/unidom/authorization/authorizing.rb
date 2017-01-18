@@ -37,4 +37,4 @@ class Unidom::Authorization::Authorizing < Unidom::Authorization::ApplicationRec
 
   end
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Authorization::Authorizing'
