@@ -1,5 +1,5 @@
 ##
-# As Authorized 是被授权的功能模块的领域逻辑关注点。
+# As Authorized 是被授权的参与者或访问者的领域逻辑关注点。
 
 module Unidom::Authorization::Concerns::AsAuthorized
 
@@ -10,6 +10,10 @@ module Unidom::Authorization::Concerns::AsAuthorized
     has_many :authorizings, class_name: 'Unidom::Authorization::Authorizing', as:     :authorized
     has_many :permissions,  through:    :authorizings,                        source: :permission
 
+    ##
+    # 将本参与者或访问者，授予指定的权限 permission ， by 是授权者， at 是授权时间，缺省为当前时间。如：
+    # 假设 selected_person 对应的类已经 include Unidom::Authorization::Concerns::AsAuthorized 。
+    # selected_person.is_authorized! permission, by: current_person
     def is_authorized!(permission: nil, by: nil, at: Time.now)
 
       assert_present! :permission, permission
