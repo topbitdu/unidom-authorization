@@ -97,3 +97,18 @@ Unidom::Common.configure do |options|
 
 end
 ```
+
+
+
+## RSpec examples
+
+```ruby
+# spec/models/unidom_spec.rb
+require 'unidom/authorization/models_rspec'
+
+# spec/types/unidom_spec.rb
+require 'unidom/authorization/types_rspec'
+
+# spec/validators/unidom_spec.rb
+require 'unidom/authorization/validators_rspec'
+```
