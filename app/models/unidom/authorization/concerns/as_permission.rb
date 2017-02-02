@@ -9,6 +9,9 @@ module Unidom::Authorization::Concerns::AsPermission
 
     has_many :authorizings, class_name: 'Unidom::Authorization::Authorizing'
 
+    ##
+    # 将本权限授予指定的参与者或访问者 authorized ， by 是授权者， at 是授权时间，缺省为当前时间。如：
+    # permission.authorize! selected_person, by: current_person
     def authorize!(authorized, by: nil, at: Time.now)
 
       assert_present! :authorized, authorized
