@@ -23,7 +23,7 @@
 1. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.0
 
 ## v1.2.2
-1. Improve the As Authorized concern for argument validation
+1. Improved the As Authorized concern for argument validation
 2. Improve the Permission model for argument validation
 
 ## v1.3
