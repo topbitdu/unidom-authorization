@@ -33,6 +33,15 @@ module Unidom::Authorization::Concerns::AsAuthorized
 
     end
 
+    def is_prohibited!(permission: nil, at: Time.now)
+
+      assert_present! :permission, permission
+      assert_present! :at,         at
+
+      authorizings.permission_is(permission).valid_at(now: at).alive.update_all closed_at: at, defunct: true
+
+    end
+
   end
 
   module ClassMethods
