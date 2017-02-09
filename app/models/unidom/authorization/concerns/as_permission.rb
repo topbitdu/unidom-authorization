@@ -44,6 +44,15 @@ module Unidom::Authorization::Concerns::AsPermission
 
     end
 
+    def prohibit!(authorized, at: Time.now)
+
+      assert_present! :authorized, authorized
+      assert_present! :at,         at
+
+      authorizings.authorized_is(authorized).valid_at(now: at).alive.update_all closed_at: at, defunct: true
+
+    end
+
   end
 
   module ClassMethods
