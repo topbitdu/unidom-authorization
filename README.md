@@ -45,12 +45,17 @@ permission = Unidom::Authorization::Permission.valid_at.alive.first
 
 permission.authorized? user, at: Time.now # false
 Unidom::Authorization::Authorizing.authorize! permission: permission, authorized: user
-# or
-permission.authorize! user, by: current_user, at: Time.now
-permission.authorize? user, at: Time.now # true
+# or: permission.authorize! user, by: current_user, at: Time.now
+# or: user.is_authorized! permission: permission, by: administrator, at: Time.now
 
-user.is_authorized! permission: permission, by: administrator, at: Time.now
+permission.authorize? user, at: Time.now # true
 user.is_authorized? permission: permission, at: Time.now # true
+
+user.is_prohibted! permission: permission, at: Time.now
+# or: permission.prohibit! user, at: Time.now
+
+permission.authorize? user, at: Time.now # false
+user.is_authorized? permission: permission, at: Time.now # false
 ```
 
 
@@ -73,6 +78,8 @@ The As Authorized concern do the following tasks for the includer automatically:
 
 4. Define the #is_authorized? method as: ``is_authorized?(permission: nil, at: Time.now)``
 
+5. Define the #is_prohibited! method as: ``is_prohibited!(permission: nil, at: Time.now)``
+
 ### As Permission concern
 
 The As Permission concern do the following tasks for the includer automatically:
@@ -81,6 +88,8 @@ The As Permission concern do the following tasks for the includer automatically:
 2. Define the #authorize! method as: ``authorize!(authorized, by: nil, at: Time.now)``
 
 3. Define the #authorize? method as: ``authorize?(authorized, at: Time.now)``
+
+4. Define the #prohibit! method as: ``prohibit!(authorized, at: Time.now)``
 
 
 
