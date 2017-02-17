@@ -60,4 +60,4 @@
 
 ## v1.6
 1. Improve the As Authorized concern to add the #``is_prohibited!`` method
-2. Improve the As Permission concern to add the #prohibit! method
+2. Improve the As Permission concern to add the #``prohibit!`` method
