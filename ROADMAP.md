@@ -61,3 +61,10 @@
 ## v1.6
 1. Improve the As Authorized concern to add the #``is_prohibited!`` method
 2. Improve the As Permission concern to add the #``prohibit!`` method
+
+## v1.6.1
+1. Improve the Authorizing spec for the permission_is scope
+2. Improve the Permission spec for the path_is scope
+
+## v1.6.2
+1. Improve the Authorizing spec for the ``belongs_to :permission, class_name: 'Unidom::Authorization::Permission'`` macro
