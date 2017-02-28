@@ -18,7 +18,12 @@ describe Unidom::Authorization::Authorizing, type: :model do
 
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
 
-    #it_behaves_like 'belongs_to', model_attributes, :permission, Unidom::Authorization::Permission, { name: 'User Management', path: 'administration/users'}
+    permission_attributes = {
+      name: 'User Management',
+      path: 'administration/users'
+    }
+
+    it_behaves_like 'belongs_to', model_attributes, :permission, Unidom::Authorization::Permission, permission_attributes
 
     it_behaves_like 'scope', :permission_is, [
       { attributes_collection: [ model_attributes ], count_diff: 1, args: [ model_attributes[:permission_id] ] },
