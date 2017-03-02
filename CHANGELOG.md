@@ -65,3 +65,6 @@
 ## v1.6.1
 1. Improve the Authorizing spec for the permission_is scope
 2. Improve the Permission spec for the path_is scope
+
+## v1.6.2
+1. Improve the Authorizing spec for the ``belongs_to :permission, class_name: 'Unidom::Authorization::Permission'`` macro
