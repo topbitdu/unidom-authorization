@@ -68,3 +68,6 @@
 
 ## v1.6.2
 1. Improve the Authorizing spec for the ``belongs_to :permission, class_name: 'Unidom::Authorization::Permission'`` macro
+
+## v1.6.3
+1. Improve the Permission spec for the validations on the #name attribute, & the #path attribute
