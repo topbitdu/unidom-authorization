@@ -11,9 +11,9 @@ class Unidom::Authorization::Authorizing < Unidom::Authorization::ApplicationRec
   belongs_to :authorizer, polymorphic: true
   belongs_to :authorized, polymorphic: true
 
-  scope :permission_is, ->(permission) { where permission_id: (permission.respond_to?(:id) ? permission.id : permission) }
-  scope :authorized_is, ->(authorized) { where authorized: authorized }
-  scope :authorized_by, ->(authorizer) { where authorizer: authorizer }
+  scope :permission_is, ->(permission) { where permission_id: to_id(permission) }
+  scope :authorized_is, ->(authorized) { where authorized:    authorized }
+  scope :authorized_by, ->(authorizer) { where authorizer:    authorizer }
 
   ##
   # 授予 authorized 权限 permission ，授权者是 authorizer ，授权时间是 opened_at。如：
