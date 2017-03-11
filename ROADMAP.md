@@ -71,3 +71,7 @@
 
 ## v1.6.3
 1. Improve the Permission spec for the validations on the #name attribute, & the #path attribute
+
+## v1.6.4
+1. Improve the Authorizing spec for the permission_is scope
+2. Improve the Permission spec for the validations on the #name attribute, & the #path attribute
