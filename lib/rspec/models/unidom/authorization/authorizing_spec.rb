@@ -25,11 +25,7 @@ describe Unidom::Authorization::Authorizing, type: :model do
 
     it_behaves_like 'belongs_to', model_attributes, :permission, Unidom::Authorization::Permission, permission_attributes
 
-    it_behaves_like 'scope', :permission_is, [
-      { attributes_collection: [ model_attributes ], count_diff: 1, args: [ model_attributes[:permission_id] ] },
-      { attributes_collection: [ model_attributes ], count_diff: 1, args: [ Unidom::Authorization::Permission.new(id: model_attributes[:permission_id]) ] },
-      { attributes_collection: [ model_attributes ], count_diff: 0, args: [ model_attributes[:authorized_id] ] },
-      { attributes_collection: [ model_attributes ], count_diff: 0, args: [ Unidom::Authorization::Permission.new(id: model_attributes[:authorized_id]) ] } ]
+    it_behaves_like 'monomorphic scope', model_attributes, :permission_is, :permission
 
   end
 
