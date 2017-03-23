@@ -75,3 +75,9 @@
 ## v1.6.4
 1. Improve the Authorizing spec for the permission_is scope
 2. Improve the Permission spec for the validations on the #name attribute, & the #path attribute
+
+## v1.6.5
+1. As Authorized shared examples
+2. As Permission shared examples
+3. RSpec shared examples manifest
+4. Improve the Permission spec for the As Permission concern
