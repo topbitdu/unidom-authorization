@@ -3,7 +3,8 @@
 
 module Unidom::Authorization::Concerns::AsPermission
 
-  extend ActiveSupport::Concern
+  extend  ActiveSupport::Concern
+  include Unidom::Common::Concerns::ArgumentValidation
 
   included do |includer|
 
@@ -15,15 +16,16 @@ module Unidom::Authorization::Concerns::AsPermission
     def authorize!(authorized, by: nil, at: Time.now)
 
       assert_present! :authorized, authorized
+      assert_present! :by,         by
       assert_present! :at,         at
 
-      attributes = { authorized: authorized, opened_at: at }
-      if by.present?
-        attributes[:authorizer] = by
-      else
-        attributes[:authorizer_id]   = Unidom::Common::NULL_UUID
-        attributes[:authorizer_type] = ''
-      end
+      attributes = { authorized: authorized, authorizer: by, opened_at: at }
+      #if by.present?
+      #  attributes[:authorizer] = by
+      #else
+      #  attributes[:authorizer_id]   = Unidom::Common::NULL_UUID
+      #  attributes[:authorizer_type] = ''
+      #end
       authorizings.create! attributes
 
     end
