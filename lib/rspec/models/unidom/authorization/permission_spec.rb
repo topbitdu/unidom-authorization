@@ -25,8 +25,6 @@ describe Unidom::Authorization::Permission, type: :model do
       { attributes_collection: [ model_attributes ], count_diff: 0, args: [ "/#{model_attributes[:path]}"     ] },
       { attributes_collection: [ model_attributes ], count_diff: 0, args: [ "#{model_attributes[:path]}.html" ] } ]
 
-    it_behaves_like 'Unidom::Authorization::Concerns::AsPermission', model_attributes
-
   end
 
 end
