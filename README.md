@@ -154,7 +154,17 @@ describe Unidom::Party::Person do
     name: 'Tim'
   }
 
-  it_behaves_like 'Unidom::Authorization::Concerns::AsAuthorized', model_attribtues
+  permission_attributes = {
+    path:      'administration/government_agency/create',
+    name:      'Create Government Agency',
+    opened_at: Time.now
+  }
+  permission = Unidom::Authorization::Permission.create! permission_attributes
+
+  authorizer_attributes = {}
+  authorizer = described_class.create! authorizer_attributes
+
+  it_behaves_like 'Unidom::Authorization::Concerns::AsAuthorized', model_attribtues, permission, authorizer
 
 end
 
@@ -168,7 +178,45 @@ describe Unidom::Position::Post do
     position_id:       SecureRandom.uuid
   }
 
-  it_behaves_like 'Unidom::Authorization::Concerns::AsAuthorized', model_attribtues
+  permission_attributes = {
+    path:      'administration/government_agency/create',
+    name:      'Create Government Agency',
+    opened_at: Time.now
+  }
+  permission = Unidom::Authorization::Permission.create! permission_attributes
+
+  authorizer_attributes = {}
+  authorizer = described_class.create! authorizer_attributes
+
+  it_behaves_like 'Unidom::Authorization::Concerns::AsAuthorized', model_attribtues, permission, authorizer
+
+end
+
+# spec/models/unidom/authorization/permission_spec.rb
+describe Unidom::Authorization::Permission, type: :model do
+
+  before :each do
+  end
+
+  after :each do
+  end
+
+  context do
+
+    model_attributes = {
+      name: 'User Management',
+      path: 'users'
+    }
+
+    authorized_attributes = {}
+    authorized = Unidom::Visitor::User.create! authorized_attributes
+
+    authorizer_attributes = {}
+    authorizer = Unidom::Visitor::User.create! authorizer_attributes
+
+    it_behaves_like 'Unidom::Authorization::Permission', model_attributes, authorized, authorizer
+
+  end
 
 end
 ```

@@ -81,3 +81,9 @@
 2. As Permission shared examples
 3. RSpec shared examples manifest
 4. Improve the Permission spec for the As Permission concern
+
+## v1.6.6
+1. Improve the As Permission concern for the argument validation
+2. Improve the As Authorized shared examples for the #is_authorized! method, the #is_authorized? method, & the #is_prohibited! method
+3. Improve the As Permission shared examples for the #authorize! method, the #authorize? method, & the #prohibit! method
+4. Permission shared examples
