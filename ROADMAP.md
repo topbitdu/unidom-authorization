@@ -87,3 +87,7 @@
 2. Improve the As Authorized shared examples for the #is_authorized! method, the #is_authorized? method, & the #is_prohibited! method
 3. Improve the As Permission shared examples for the #authorize! method, the #authorize? method, & the #prohibit! method
 4. Permission shared examples
+
+## v1.6.7
+1. Improve the As Authorized shared examples for the #is_authorized! method, the #is_authorized? method
+2. Improve the As Permission shared examples for the #authorize! method, the #authorize? method
