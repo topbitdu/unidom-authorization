@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unidom-authorization (1.6.6)
+    unidom-authorization (1.6.7)
       unidom-common (~> 1.9)
 
 GEM
