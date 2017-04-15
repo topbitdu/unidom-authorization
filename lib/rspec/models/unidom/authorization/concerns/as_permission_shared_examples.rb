@@ -41,6 +41,32 @@ shared_examples 'Unidom::Authorization::Concerns::AsPermission' do |model_attrib
 
   end
 
+  context '#prohibit!' do
+
+    it "should be able to prohibit #{authorized.inspect}" do
+      authorizing = @permission.authorize! authorized, by: authorizer
+      expect(authorizing).to     be_present
+      expect(authorizing).to     be_a(Unidom::Authorization::Authorizing)
+      expect(authorizing).not_to be_new_record
+
+      prohibiting = @permission.prohibit! authorized
+      expect(prohibiting).to be_present
+      expect(prohibiting).to eq(1)
+    end
+
+    it "should be able to prohibit #{authorized.inspect} at #{Time.now.inspect}" do
+      authorizing = @permission.authorize! authorized, by: authorizer, at: Time.now
+      expect(authorizing).to     be_present
+      expect(authorizing).to     be_a(Unidom::Authorization::Authorizing)
+      expect(authorizing).not_to be_new_record
+
+      prohibiting = @permission.prohibit! authorized, at: Time.now
+      expect(prohibiting).to be_present
+      expect(prohibiting).to eq(1)
+    end
+
+  end
+
   context do
 
     authorizing_1_attribtues = {
