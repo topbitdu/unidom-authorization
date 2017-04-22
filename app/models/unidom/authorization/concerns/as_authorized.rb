@@ -14,6 +14,8 @@ module Unidom::Authorization::Concerns::AsAuthorized
     # 将本参与者或访问者，授予指定的权限 permission ， by 是授权者， at 是授权时间，缺省为当前时间。如：
     # 假设 selected_person 对应的类已经 include Unidom::Authorization::Concerns::AsAuthorized 。
     # selected_person.is_authorized! permission, by: current_person
+    # # or
+    # selected_person.is_authorized! permission, by: current_person, at: Time.now
     def is_authorized!(permission: nil, by: nil, at: Time.now)
 
       assert_present! :permission, permission
