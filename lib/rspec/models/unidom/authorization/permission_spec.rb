@@ -23,7 +23,8 @@ describe Unidom::Authorization::Permission, type: :model do
     it_behaves_like 'scope', :path_is, [
       { attributes_collection: [ model_attributes ], count_diff: 1, args: [ model_attributes[:path]           ] },
       { attributes_collection: [ model_attributes ], count_diff: 0, args: [ "/#{model_attributes[:path]}"     ] },
-      { attributes_collection: [ model_attributes ], count_diff: 0, args: [ "#{model_attributes[:path]}.html" ] } ]
+      { attributes_collection: [ model_attributes ], count_diff: 0, args: [ "#{model_attributes[:path]}.html" ] }
+    ]
 
   end
 
