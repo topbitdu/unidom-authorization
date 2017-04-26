@@ -26,6 +26,12 @@ module Unidom::Authorization::Concerns::AsAuthorized
 
     end
 
+    ##
+    # 判断本参与者或访问者，在给定的时间 at 是否拥有给定的权限 permission 。如：
+    # 假设 selected_person 对应的类已经 include Unidom::Authorization::Concerns::AsAuthorized 。
+    # selected_person.is_authorized? permission
+    # # or
+    # selected_person.is_authorized? permission, at: Time.now
     def is_authorized?(permission: nil, at: Time.now)
 
       assert_present! :permission, permission
