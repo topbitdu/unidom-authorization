@@ -219,4 +219,30 @@ describe Unidom::Authorization::Permission, type: :model do
   end
 
 end
+
+# spec/models/unidom/authorization/authorizing_spec.rb
+describe Unidom::Authorization::Authorizing, type: :model do
+
+  before :each do
+  end
+
+  after :each do
+  end
+
+  context do
+
+    model_attributes = {
+      authorizer_id:   SecureRandom.uuid,
+      authorizer_type: 'Unidom::Authorization::Authorizer::Mock',
+      authorized_id:   SecureRandom.uuid,
+      authorized_type: 'Unidom::Authorization::Authorized::Mock',
+      permission_id:   SecureRandom.uuid
+    }
+    authorizer_class_list = [ Unidom::Visitor::User, Unidom::Party::Person ]
+
+    it_behaves_like 'Unidom::Authorization::Authorizing', model_attributes, authorizer_class_list, [ {}, { name: 'Tim' } ]
+
+  end
+
+end
 ```

@@ -95,3 +95,7 @@
 ## v1.6.8
 1. Improve the As Authorized shared examples for the #is_prohibited! method
 2. Improve the As Permission shared examples for the #prohibit! method
+
+## v1.6.9
+1. Authorizing shared examples
+2. Improve the RSpec shared examples manifest to require the Authorizing shared examples
