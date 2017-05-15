@@ -99,3 +99,7 @@
 ## v1.6.9
 1. Authorizing shared examples
 2. Improve the RSpec shared examples manifest to require the Authorizing shared examples
+
+## v1.6.10
+1. Improve the Ruby Gem Specification to depend on unidom-common v1.10
+2. Improve the Permission migration, the Authorizing migration for the #opened_at column, & the #closed_at column
