@@ -103,3 +103,7 @@
 ## v1.6.10
 1. Improve the Ruby Gem Specification to depend on unidom-common v1.10
 2. Improve the Permission migration, the Authorizing migration for the #opened_at column, & the #closed_at column
+
+## v1.6.11
+1. Improve the Ruby Gem Specification to depend on unidom-common v1.11
+2. Improve the Permission migration, the Authorizing migration for the #state column
