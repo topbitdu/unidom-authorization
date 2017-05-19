@@ -9,7 +9,7 @@ class CreateUnidomPermissions < ActiveRecord::Migration
 
       t.text :description
 
-      t.column   :state, 'char(1)', null: false, default: 'C'
+      t.column   :state, 'char(1)', null: false, default: Unidom::Common::STATE
       t.datetime :opened_at,        null: false, default: Unidom::Common::OPENED_AT
       t.datetime :closed_at,        null: false, default: Unidom::Common::CLOSED_AT
       t.boolean  :defunct,          null: false, default: false
